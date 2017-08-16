@@ -1,7 +1,5 @@
 # MYSPACE:  a travel review website for space
 
-[Our app on Heroku](https://myspace-taja.herokuapp.com/)
-
 ## User stories
 
 * On welcome page I can search by distance
@@ -28,7 +26,7 @@
 - [ ] Try to include ES6 syntax on the server.
 
 
-## Architecture
+## Schema
 
 **Planets**
 
@@ -49,7 +47,7 @@
 | Column  | Type |
 | -------- | --------
 | id    | serial primary key     
-| planet    | foreign key planet id      
+| planet_id    | integer references planets(id)      
 | user     | varchar(20)      
 | content     | text     
 | likes     | integer     
