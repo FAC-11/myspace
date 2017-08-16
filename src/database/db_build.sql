@@ -34,7 +34,7 @@ INSERT INTO planets (name, distance, description, temperature, weather, interest
 CREATE TABLE reviews (
 id            SERIAL                          PRIMARY KEY,
 planet_id     INTEGER REFERENCES planets(id)  ON UPDATE CASCADE,
-user          VARCHAR(20),
+username          VARCHAR(20),
 content       TEXT                            NOT NULL,
 likes         INTEGER                         DEFAULT 0,
 dislikes      INTEGER                         DEFAULT 0
