@@ -9,7 +9,8 @@ const review = require('./add-review');
 const error = require('./error');
 
 router.get('/', home);
-router.get('/results', results.get);
+// router.get('/results/all', results.get);     //can piggyback on /results/:distance   (?)
+router.get('/results/:distance', results.get);
 router.get('/planets/:planet', planet.get);
 router.post('/add-review', review.post);
 router.use(error.client);
