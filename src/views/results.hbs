@@ -1,1 +1,9 @@
-<h1>Rendering results... </h1>
+<section>
+{{#each planets}}
+<article>
+<img src="{{this.filename}}" alt="{{this.name}} picture">
+<h3>{{this.name}}</h3>
+<h4>{{this.distance}}</h4>
+</article>
+{{/each}}
+</section>
