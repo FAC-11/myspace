@@ -3,7 +3,7 @@ const path = require('path');
 const router = express.Router();
 
 const home = require('./home');
-const searchResults = require('./results');
+const getPlanets = require('./results'); ///or from model
 const planet = require('./planet');
 const review = require('./add-review');
 const error = require('./error');
