@@ -1,13 +1,17 @@
 <section>
-<article>
-  <h1>{{this.planetData.name}}</h1>
-<img src="{{this.planetData.filename}}" alt="{{this.name}} picture">
-<h4>{{this.planetData.distance}}</h4>
-<h4>{{this.planetData.description}}</h4>
-<h4>{{this.planetData.temperature}}</h4>
-<h4>{{this.planetData.weather}}</h4>
-<h4>{{this.planetData.interest}}</h4>
-</article>
+  <article>
+    <h1>{{this.planetData.name}}</h1>
+    <img src="{{this.planetData.filename}}" alt="{{this.name}} picture">
+    <h4>{{this.planetData.distance}}</h4>
+    <h4>{{this.planetData.description}}</h4>
+    <h4>{{this.planetData.temperature}}</h4>
+    <h4>{{this.planetData.weather}}</h4>
+    <h4>{{this.planetData.interest}} people are interested -
+      <form  id="interest-form" action="/interest/{{this.planetData.id}}" method='GET'>
+        <input type="submit" name="submit"  class="interest-button">Are you?
+      </form>
+    </h4>
+  </article>
 </section>
 
 <section>
