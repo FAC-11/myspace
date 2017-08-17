@@ -1,18 +1,17 @@
 const searchResults = require ('../model/queries/search-query')
 
 
-getPlanets = (req, res) => {
+const getPlanets = (req, res) => {
   const {distance} = req.params;
   searchResults.onDistance (distance, (err, planetsList)=> {
-    if (err) {console.log(err)};
+    if (err) {console.log('ERROR: ',err)}
     else {
-      console.log(planetsList);
-      //do this with the results;
+      // console.log('LOG:', planetsList);
+      res.render ('results', planetsList);
     }
 
   });
 
 };
 
-module.exports = searchResults;
-
+module.exports = getPlanets;
