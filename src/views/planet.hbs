@@ -7,6 +7,21 @@
 <h4>{{this.planetData.temperature}}</h4>
 <h4>{{this.planetData.weather}}</h4>
 <h4>{{this.planetData.interest}}</h4>
-
 </article>
+</section>
+
+<section>
+
+<h2>
+  {{this.reviewArray.length}} people went to {{this.planetData.name}}. This is what they thought -
+</h2>
+{{#each reviewArray}}
+  <article>
+    <h3>{{this.username}}</h3>
+    <h4>{{this.content}}</h4>
+      Thumbs up: {{this.likes}}
+      Thumbs down: {{this.dislikes}}
+
+  </article>
+{{/each}}
 </section>
