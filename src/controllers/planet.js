@@ -1,14 +1,32 @@
-const planets = require('./../model/index');
+const getPlanetData = require('../model/queries/get-planet.js');
+///should be an array of one planet
+const foundReviews = require('../model/queries/get-reviews.js')
+
+var reviewArray = [];
+
 exports.get = (req, res, next) => {
-  const {
-    planet
-  } = req.params;
   console.log(req.params);
-  console.log(planets[0].name);
-  if (planets.includes(planet)) {
-    return res.render('planet', {
-      planet
-    });
-  }
-  next();
+  const {planet} = req.params;    //currently planet id
+
+
+  foundReviews.byPlanetId (planet, (err, result) => {   //currently planet =  planet id
+    if (err) console.log ('DB ERROR getting reviews: ',err);
+      else {
+
+        reviewArray = result;
+
+        getPlanetData.byId (planet,reviewArray, (err,planetData) => {
+          if (err || !planet) {
+            console.log ('planet id:',planet,'error: ',err);
+          } else {
+            console.log ('Gonna render: pla-net', {planetData, reviewArray});
+            return res.render('planet', {planetData, reviewArray});
+          }
+        });
+
+      }
+  });
+  console.log (reviewArray);
+
+  // next();
 };

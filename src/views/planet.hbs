@@ -1,12 +1,27 @@
 <section>
 <article>
-  <h1>{{this.name}}</h1>
-<img src="{{this.filename}}" alt="{{this.name}} picture">
-<h4>{{this.distance}}</h4>
-<h4>{{this.description}}</h4>
-<h4>{{this.temperature}}</h4>
-<h4>{{this.weather}}</h4>
-<h4>{{this.interest}}</h4>
-
+  <h1>{{this.planetData.name}}</h1>
+<img src="{{this.planetData.filename}}" alt="{{this.name}} picture">
+<h4>{{this.planetData.distance}}</h4>
+<h4>{{this.planetData.description}}</h4>
+<h4>{{this.planetData.temperature}}</h4>
+<h4>{{this.planetData.weather}}</h4>
+<h4>{{this.planetData.interest}}</h4>
 </article>
+</section>
+
+<section>
+
+<h2>
+  {{this.reviewArray.length}} people went to {{this.planetData.name}}. This is what they thought -
+</h2>
+{{#each reviewArray}}
+  <article>
+    <h3>{{this.username}}</h3>
+    <h4>{{this.content}}</h4>
+      Thumbs up: {{this.likes}}
+      Thumbs down: {{this.dislikes}}
+
+  </article>
+{{/each}}
 </section>
