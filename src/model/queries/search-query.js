@@ -1,5 +1,5 @@
 const dbConnection = require('../database/db_connection');
-const querySecondHalf = require('../../controllers/results.js')
+const querysecondHalf = require('../../controllers/results.js')  //WTF??
 
 const searchResults = {};
 
@@ -9,7 +9,7 @@ const queryFirstHalf = "SELECT * FROM planets";
 const fullQuery = (queryDistance) => {
   let dbQuerySelectCriterion = {};
   if (queryDistance === 'all')
-    dbQuerySelectCriterion = {secondHalf:";" , params: null};
+    dbQuerySelectCriterion = {secondHalf:" ORDER BY interest;" , params: null};
   else {
     dbQuerySelectCriterion =
       {secondHalf: " WHERE distance <=$1 ORDER BY interest;", params: [Number(queryDistance)]};
