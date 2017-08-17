@@ -11,7 +11,7 @@ const error = require('./error');
 router.get('/', home.get);
 router.get('/results/all', getPlanets.get);     //can piggyback on /results/:distance   (?)
 // router.get('/results/:distance', results.get);
-//router.get('/planets/:planet', planet.get);
+router.get('/planets/:planet', planet.get);
 //router.post('/add-review', review.post);
 router.use(error.client);
 router.use(error.server);
