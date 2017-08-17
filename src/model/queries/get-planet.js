@@ -1,11 +1,8 @@
 const dbConnection = require('../database/db_connection');
-const foundReviews = require('./get-reviews.js')
 
 const getPlanetData = {};
 
 const queryFirstHalf = "SELECT * FROM planets";
-
-var reviews = [];
 
 const fullQuery = (planetId) => {
   let dbQuerySelectCriterion =
@@ -19,21 +16,17 @@ const fullQueryByName = (planetName) => {
 }
 
 
-foundReviews.byPlanetId (planetId, (err, result) => {
-  if (err) console.log ('DB ERROR: ',err);
-    else {
-      reviews = result;
-    }
-});
-console.log (reviews);
+getPlanetData.byId = (planetId, reviewArray, cb) => {   ///NB the callback here took a third,
+                                                      ///passthrough argument
+                                                      ///which is an array of reviews
+                                                      ///- but that was wrong
 
-getPlanetData.byId = (planetId, cb) => {   ///NB the callback here takes a third, passthrough argument
-                                          ///which is an array of reviews
   query=fullQuery(planetId);
   dbConnection.query (queryFirstHalf+query.secondHalf, query.params, (err,res) => {
     if (err) cb(err);
     else {
-      cb (null, res.rows, reviews);
+      console.log ('Get pd length:',res.rows.length, res.rows[0])
+      cb (null, res.rows[0], reviewArray);
     }
   });
 };
