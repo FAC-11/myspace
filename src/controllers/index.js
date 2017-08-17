@@ -8,7 +8,7 @@ const planet = require('./planet');
 const review = require('./add-review');
 const error = require('./error');
 
-router.get('/', home.get);
+router.get('/home', home);
 router.get('/results/:distance', getPlanets);
 router.get('/planets/:planet', planet.get);
 router.post('/add-review', review.post);

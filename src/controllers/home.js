@@ -1,4 +1,5 @@
-exports.get = (req, res) => {
+const home = (req, res) => {
   res.render('home', { activePage: { home: true } });
-  next();
-};
+}
+
+module.exports = home;

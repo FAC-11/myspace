@@ -22,11 +22,10 @@ const fullQuery = (queryDistance) => {
 
 searchResults.onDistance = (distance, cb) => {
   query = fullQuery(distance);
-  dbConnection.query(queryFirstHalf + query.secondHalf, query.params, (err,res) => {
+  dbConnection.query(queryFirstHalf + query.secondHalf, query.params, (err, res) => {
     if (err) {
       cb(err)
     }
-
     else {
       cb (null, res.rows);
 
