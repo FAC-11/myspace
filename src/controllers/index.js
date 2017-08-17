@@ -3,14 +3,14 @@ const path = require('path');
 const router = express.Router();
 
 const home = require('./home');
-//const searchResults = require('./results');
+const getPlanets = require('./results');
 const planet = require('./planet');
 //const review = require('./add-review');
 const error = require('./error');
 
 router.get('/', home.get);
-// router.get('/results/all', results.get);     //can piggyback on /results/:distance   (?)
-//router.get('/results/:distance', results.get);
+router.get('/results/all', getPlanets.get);     //can piggyback on /results/:distance   (?)
+// router.get('/results/:distance', results.get);
 //router.get('/planets/:planet', planet.get);
 //router.post('/add-review', review.post);
 router.use(error.client);
