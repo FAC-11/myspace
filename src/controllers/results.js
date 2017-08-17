@@ -1,6 +1,5 @@
 const searchResults = require ('../model/queries/search-query')
 
-
 const getPlanets = (req, res) => {
   const {distance} = req.params;
     console.log(distance);

@@ -1,3 +1,5 @@
-exports.get = (req, res) => {
-res.render('home', { activePage: { home: true } });
-};
+const home = (req, res) => {
+  res.render('home', { activePage: { home: true } });
+}
+
+module.exports = home;
