@@ -43,11 +43,12 @@ dislikes      INTEGER                         DEFAULT 0
 );
 
 INSERT INTO reviews (planet_id, username, content, likes, dislikes) VALUES
-(1, 'Buzz Aldrin', 'Flew too close', '6', '0'),
-(5, 'Buzz Lightyear', 'THE MOON!', '2', '2'),
+(1, 'Buzz Aldrin', 'Bit hot', '6', '0'),
+(5, 'Buzz Lightyear', 'Not much atmosphere', '2', '2'),
 (4, 'Ziggy Stardust', 'Kinda crowded', '0', '0'),
 (9, 'Zap Branagan', 'Wi-fi was atrocious', '5', '5'),
-(6, 'HAL-5000', 'Matt Damon', '0', '1'),
-(8, 'WALL-E', 'Discovered by Galileo', '3', '6');
+(3, 'HAL-5000', 'Did NOT get on with the women here', '0', '1'),
+(8, 'WALL-E', 'Discovered by Galileo', '3', '6'),
+(12, 'Tim Peake', 'Journey took forever', '7', '8');
 
 COMMIT;
