@@ -15,3 +15,4 @@ getPlanets = (req, res) => {
 };
 
 module.exports = searchResults;
+
