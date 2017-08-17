@@ -11,8 +11,8 @@ description   TEXT          NOT NULL,
 temperature   INTEGER       NOT NULL,
 weather       VARCHAR(200)  NOT NULL,
 interest      INTEGER       DEFAULT 0,
-filename      varchar(20)   NOT NULL,
-thumbnailname varchar(20)   NOT NULL
+filename      varchar(40)   NOT NULL,
+thumbnailname varchar(40)   NOT NULL
 );
 
 
