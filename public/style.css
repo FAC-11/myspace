@@ -73,7 +73,7 @@ FOOTER
   margin: 5em auto;
   max-width: var(--limited-width-container);
   padding: 1rem 1rem;
-  color: #333;
+  color: lightgrey;
 }
 
 /********************
@@ -81,7 +81,7 @@ HOME PAGE
 *********************/
 
 h1 {
-  font-size: 5em;
+  font-size: 6em;
   padding: 0.5em;
 }
 
