@@ -8,10 +8,9 @@ const thumbsup = (reviewId) => {
       newThumbsup = res.rows[0].likes +1;
       query="UPDATE reviews SET likes =$1;";
       dbConnection.query (query, [newThumbsup], (err,res) => {
-        if (err) console.log ('thumbs up  failed on UPDATE. Noone cares.');
+        if (err) console.log ('thumbs up failed on UPDATE. Noone cares.');
         else {
           console.log ('thumbs up suceeded. Noone cares.');
-
         }
       });
     }
