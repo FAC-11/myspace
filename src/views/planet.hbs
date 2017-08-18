@@ -7,7 +7,7 @@
     <h4>{{this.planetData.temperature}}</h4>
     <h4>{{this.planetData.weather}}</h4>
     <h4>{{this.planetData.interest}} people are interested -
-      <form  id="interest-form" action="/interest/{{this.planetData.id}}" method='GET'>
+      <form id="interest-form" action="/interest/{{this.planetData.id}}" method='GET'>
         <input type="submit" name="submit"  class="interest-button">Are you?
       </form>
     </h4>
@@ -22,12 +22,15 @@
 {{#each reviewArray}}
   <article>
     <h3>{{this.username}}</h3>
-    <h4>{{this.content}}</h4>
+    <h4>"{{this.content}}"</h4>
       Thumbs up: {{this.likes}}
-      <form  id="thumbsup-form" action="/thumbsup/{{this.planetData.id}}/{{this.foundReviews.id}}" method='GET'>
-        <input type="submit" name="submit" value=""  class="likes-button">Like
+      <form id="thumbsup-form" action="/thumbsup" method='GET'>
+        <input type="submit" name="submit" value=""  class="thumbsup-button">Click
       </form>
       Thumbs down: {{this.dislikes}}
+      <form id="thumbsdown-form" action="/thumbsdown/{{this.planetData.id}}/{{this.foundReviews.id}}" method='GET'>
+        <input type="submit" name="submit" value=""  class="thumbsdown-button">Click
+      </form>
 
   </article>
 {{/each}}
