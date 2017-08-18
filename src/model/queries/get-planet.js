@@ -25,7 +25,7 @@ getPlanetData.byId = (planetId, reviewArray, cb) => {   ///NB the callback here 
   dbConnection.query (queryFirstHalf+query.secondHalf, query.params, (err,res) => {
     if (err) cb(err);
     else {
-      console.log ('Get pd length:',res.rows.length, res.rows[0])
+      // console.log ('Get pd length:',res.rows.length, res.rows[0])
       cb (null, res.rows[0], reviewArray);
     }
   });
