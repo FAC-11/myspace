@@ -43,8 +43,8 @@ Put the database folder in the model folder.
 | temperature     | integer      
 | weather     | varchar(200)     
 | interest     | integer     
-| filename | varchar(20)     
-| thumbnailname | varchar(20)     
+| filename | varchar(40)     
+| thumbnailname | varchar(40)     
 
 **Reviews**
 
@@ -57,4 +57,8 @@ Put the database folder in the model folder.
 | content     | text     
 | likes     | integer     
 | dislikes     | integer     
+
+**Setup**
+
+DB_TEST_URL = postgres://traveler:space@localhost:5432/myspace
  
