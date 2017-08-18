@@ -11,6 +11,7 @@ const incrementInterestById = (planetId) => {
         if (err) console.log ('Plus one failed on UPDATE. Noone cares.');
         else {
           console.log ('Plus one suceeded. Noone cares.');
+        
         }
       });
     }
