@@ -1,9 +1,9 @@
-const incrementInterestById = require('../model/queries/add-interest.js');
+const thumbsup = require('../model/queries/addthumbsup.js');
 
 exports.get = (req, res) => {
-  const {planet} = req.params;    //currently planet id
-  console.log ('Attempting to add interest to ',planet);
-  incrementInterestById (planet);
+  const {review} = req.params;    //currently planet id
+  console.log ('Attempting to thumbsup ',review);
+  thumbsup (review);
   res.redirect(`/planets/${planet}`)
 
 }

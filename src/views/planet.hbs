@@ -24,6 +24,9 @@
     <h3>{{this.username}}</h3>
     <h4>{{this.content}}</h4>
       Thumbs up: {{this.likes}}
+      <form  id="thumbsup-form" action="/thumbsup/{{this.planetData.id}}/{{this.foundReviews.id}}" method='GET'>
+        <input type="submit" name="submit" value=""  class="likes-button">Like
+      </form>
       Thumbs down: {{this.dislikes}}
 
   </article>
