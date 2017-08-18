@@ -1,4 +1,4 @@
-# Myspace:  a travel review website for space :earth_asia: :rocket: :sun_with_face: 
+# Myspace:  a travel review website for space :earth_asia: :rocket: :sun_with_face:
 *because in space no one can hear you Yelp*
 
 ## User stories
@@ -60,5 +60,29 @@ Put the database folder in the model folder.
 
 **Setup**
 
-DB_TEST_URL = postgres://traveler:space@localhost:5432/myspace
- 
+To setup myspace with a database running on a local installation of PostgreSQL,
+
+```
+createdb myspace
+sudo -u postgres createuser majortom
+sudo -u postgres createdb myspace ```
+and in `psql`,
+```
+GRANT ALL PRIVILEGES ON DATABASE myspace TO majortom ;
+ALTER USER majortom WITH PASSWORD 'milkymilkyway'; ```
+Create a `config.env` for the project if you don't have one already and add to it the line
+
+```
+DB_TEST_URL = postgres://majortom:milkymilkyway@localhost:5432/myspace
+ ```
+
+Finally build the database:
+
+`npm run dbinit`
+
+
+## Learnings & Links
+
+* Express makes most things simpler but routing in express carries its own new risk of bugs.
+* `transform-origin` is kewl.
+* `:after` allows you to define CSS properties to be applied after others, so they will take effect no matter what the properties are changed to previously.

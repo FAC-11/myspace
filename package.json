@@ -4,6 +4,7 @@
   "description": "A travel review website for the solar system",
   "main": "index.js",
   "scripts": {
+    "dbinit": "node src/model/database/db_build.js",
     "start": "node src/index.js",
     "start:watch": "nodemon -q src/index.js",
     "test": "NODE_ENV=test tape tests/*.test.js | tap-spec",
