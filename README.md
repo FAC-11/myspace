@@ -1,15 +1,16 @@
-# MYSPACE:  a travel review website for space
+# Myspace:  a travel review website for space :earth_asia: :rocket: :sun_with_face: 
+*because in space no one can hear you Yelp*
 
 ## User stories
 
-* On welcome page I can search by distance
+* On the welcome page I can search for planetary destinations by their distance from Earth
 
-* As a user I can a list of planet destinations
+* As a user I can a list of clickable search results, or choose to view all the options
 
-* I can view individual planet pages
-    * I can rate and review planets
-    * I can view reviews and write reviews
-    * I can rate reviews, good and bad
+* As a user I can view individual planet pages and:
+    * I can upvote planets
+    * I can see reviews and add my own reviews
+    * I can rate reviews, good or bad
 
 * **SG** I can log in
 * **SG** I can see a map of the planets
@@ -25,7 +26,9 @@
 - [ ] Use Heroku or a similar service to host the app and the database.
 - [ ] Try to include ES6 syntax on the server.
 
+## Architecture
 
+Put the database folder in the model folder.
 ## Schema
 
 **Planets**
@@ -40,6 +43,8 @@
 | temperature     | integer      
 | weather     | varchar(200)     
 | interest     | integer     
+| filename | varchar(20)     
+| thumbnailname | varchar(20)     
 
 **Reviews**
 
@@ -52,3 +57,4 @@
 | content     | text     
 | likes     | integer     
 | dislikes     | integer     
+ 
