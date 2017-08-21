@@ -1,37 +1,34 @@
 <section>
-  <article>
+  <article class="planet-info">
     <h1>{{this.planetData.name}}</h1>
     <img src="{{this.planetData.filename}}" alt="{{this.name}} picture">
-    <h4>{{this.planetData.distance}}</h4>
-    <h4>{{this.planetData.description}}</h4>
-    <h4>{{this.planetData.temperature}}</h4>
-    <h4>{{this.planetData.weather}}</h4>
-    <h4>{{this.planetData.interest}} people are interested -
+    <ul>
+      <li>{{this.planetData.distance}}au from Earth</li>
+      <li>{{this.planetData.description}}</li>
+      <li>{{this.planetData.temperature}} Kelvin</li>
+      <li>{{this.planetData.weather}}</li>
+    </ul>
+    <h3>{{this.planetData.interest}} people want to go here
       <form id="interest-form" action="/interest/{{this.planetData.id}}" method='GET'>
-        <input type="submit" name="submit"  class="interest-button">Are you?
+        <input type="submit" name="submit" value="Do you?" class="interest-button">
       </form>
-    </h4>
+    </h3>
   </article>
 </section>
-
-<section>
-
-<h2>
-  {{this.reviewArray.length}} people went to {{this.planetData.name}}. This is what they thought -
-</h2>
-{{#each reviewArray}}
-  <article>
-    <h3>{{this.username}}</h3>
-    <h4>"{{this.content}}"</h4>
-      Thumbs up: {{this.likes}}
-      <form id="thumbsup-form" action="/thumbsup" method='GET'>
-        <input type="submit" name="submit" value=""  class="thumbsup-button">Click
+<section class="reviews">
+  <h2>{{this.reviewArray.length}} people left a review for {{this.planetData.name}}. This is what they thought -</h2>
+  {{#each reviewArray}}
+    <article class="each-review">
+      <h3>"{{this.content}}"</h3>
+      <p>- {{this.username}}</p><br />
+      <p>{{this.likes}} people like this review :)</p>
+      <form id="thumbs-form" action="/thumbsup/{{this.id}}" method='GET'>
+        <input type="submit" name="submit" value="Thumbs Up" class="thumbs-button">
       </form>
-      Thumbs down: {{this.dislikes}}
-      <form id="thumbsdown-form" action="/thumbsdown/{{this.planetData.id}}/{{this.foundReviews.id}}" method='GET'>
-        <input type="submit" name="submit" value=""  class="thumbsdown-button">Click
+      <p>{{this.dislikes}} people thought this review sucked :(</p>
+      <form id="thumbs-form" action="/thumbsdown/{{this.id}}" method='GET'>
+        <input type="submit" name="submit" value="Thumbs Down" class="thumbs-button">
       </form>
-
-  </article>
-{{/each}}
+    </article>
+  {{/each}}
 </section>

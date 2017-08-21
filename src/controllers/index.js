@@ -9,15 +9,14 @@ const interest = require('./interest');
 const review = require('./add-review');
 const error = require('./error');
 const thumbsup = require('./thumbsup');
-// const thumbsdown = require('./thumbsdown');
+const thumbsdown = require('./thumbsdown');
 
 router.get('/', home);
 router.get('/interest/:planet', interest.get);
 router.get('/results/:distance', getPlanets);
-// router.get('/planets/interest/:planet', interest.get);
 router.get('/planets/:planet', planet.get);
-router.get('/thumbsup', thumbsup.get);
-// router.get('/thumbsdown', thumbsdown.get);
+router.get('/thumbsup/:review', thumbsup.get);
+router.get('/thumbsdown/:review', thumbsdown.get);
 router.post('/add-review', review.post);
 router.use(error.client);
 router.use(error.server);

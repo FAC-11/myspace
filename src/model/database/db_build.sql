@@ -44,6 +44,7 @@ dislikes      INTEGER                         DEFAULT 0
 
 INSERT INTO reviews (planet_id, username, content, likes, dislikes) VALUES
 (1, 'Buzz Aldrin', 'Bit hot', '6', '0'),
+(1, 'Helga Pataki', 'Had a blast', '2', '7'),
 (5, 'Buzz Lightyear', 'Not much atmosphere', '2', '2'),
 (4, 'Ziggy Stardust', 'Kinda crowded', '0', '0'),
 (9, 'Zap Branagan', 'Wi-fi was atrocious', '5', '5'),

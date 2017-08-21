@@ -16,10 +16,7 @@ const fullQueryByName = (planetName) => {
 }
 
 
-getPlanetData.byId = (planetId, reviewArray, cb) => {   ///NB the callback here took a third,
-                                                      ///passthrough argument
-                                                      ///which is an array of reviews
-                                                      ///- but that was wrong
+getPlanetData.byId = (planetId, reviewArray, cb) => {
 
   query=fullQuery(planetId);
   dbConnection.query (queryFirstHalf+query.secondHalf, query.params, (err,res) => {
