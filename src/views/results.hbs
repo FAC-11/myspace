@@ -1,9 +1,9 @@
 <section>
   {{#each planetsList}}
-  <article>
+  <article class="results">
     <img src="{{this.filename}}" alt="{{this.name}} picture">
     <h3><a href="/planets/{{this.id}}">{{this.name}}</a></h3>
-    <h4>{{this.distance}}au</h4>
+    <p>{{this.distance}}au from Earth</p>
   </article>
   {{/each}}
 </section>
