@@ -32,3 +32,11 @@
     </article>
   {{/each}}
 </section>
+<section class="add-review">
+  <p>Been here? Add a review.</p>
+  <form id="add-review" action="/add-review" method='POST'>
+    <input type="text" placeholder="Write your own review here">
+    <input type="text" placeholder="Username">
+    <input type="submit" name="submit" value="Submit" class="review-button">
+  </form>
+</section>

@@ -18,8 +18,8 @@ thumbnailname varchar(40)   NOT NULL
 
 INSERT INTO planets (name, distance, description, temperature, weather, interest, filename, thumbnailname) VALUES
 ('Sol', '1', 'description of Earth', '5000000', 'weather report', 1, '/images/planets/sol.gif', '/images/planets/..pic'),
-('Mercury', '0.61', 'description of Mercury', '272', 'weather report', 50, '/images/planets/mercury.gif', '../pics/'),
-('Venus', '0.28', 'description of Venus', '737', 'weather report', 40, '/images/planets/venus.gif', '../pics/'),
+('Mercury', '0.61', 'description of Mercury', '272', 'weather report', 50, '/images/planets/mercury2.gif', '../pics/'),
+('Venus', '0.28', 'description of Venus', '737', 'weather report', 40, '/images/planets/venus2.jpg', '../pics/'),
 ('Earth', '0', 'description of Earth', '288', 'weather report', 50, '/images/planets/earth.gif', '../pics/'),
 ('The Moon', '0.003', 'description of Earth', '185', 'weather report', 20, '../pics/', '../pics/'),
 ('Mars', '0.52', 'description of Mars', '210', 'weather report', 4, '/images/planets/mars.gif', '../pics/'),

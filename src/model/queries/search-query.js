@@ -28,7 +28,6 @@ searchResults.onDistance = (distance, cb) => {
     }
     else {
       cb (null, res.rows);
-
     }
   });
 };
